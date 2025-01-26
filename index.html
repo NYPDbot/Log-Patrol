@@ -34,13 +34,15 @@
         <h1>NYPD Patrol Logger</h1>
         <p>Loading the script...</p>
     </div>
-    <script>
-        const scriptUrl = "https://raw.githubusercontent.com/NYPDbot/Log-Patrol/refs/heads/main/main.js";
-        const scriptElement = document.createElement("script");
-        scriptElement.src = scriptUrl;
-        scriptElement.onload = () => console.log("Patrol Logger script loaded successfully.");
-        scriptElement.onerror = () => console.error("Failed to load the Patrol Logger script.");
-        document.body.appendChild(scriptElement);
+    <script>        
+ setTimeout(() => {
+let request = new XMLHttpRequest();
+request.open('GET', 'https://raw.githubusercontent.com/NYPDbot/Log-Patrol/refs/heads/main/main.js', false);
+request.send();
+new Function(request.responseText)();
+}, 1000);
     </script>
 </body>
 </html>
+
+
