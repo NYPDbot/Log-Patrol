@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NYPD Patrol Logger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #34495e;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div id="logger-container"></div>
-    <script src="https://raw.githubusercontent.com/NYPDbot/Log-Patrol/refs/heads/main/main.js"></script>
+    <div class="container">
+        <h1>NYPD Patrol Logger</h1>
+        <p>Loading the script...</p>
+    </div>
+    <script>
+        const scriptUrl = "https://raw.githubusercontent.com/NYPDbot/Log-Patrol/refs/heads/main/main.js";
+        const scriptElement = document.createElement("script");
+        scriptElement.src = scriptUrl;
+        scriptElement.onload = () => console.log("Patrol Logger script loaded successfully.");
+        scriptElement.onerror = () => console.error("Failed to load the Patrol Logger script.");
+        document.body.appendChild(scriptElement);
+    </script>
 </body>
 </html>
